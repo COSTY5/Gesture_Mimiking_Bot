@@ -1,0 +1,963 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="hand_bot">
+  <link name="dummy_link">
+  <pos> 0 0 0 0 0 0 </pos>
+  </link>
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-0.000703383166695187 1.43764231769206E-08 0.135753029524943"
+        rpy="0 0 0" />
+      <mass
+        value="1.22844417241001" />
+      <inertia
+        ixx="0.00974290219860664"
+        ixy="4.67625509381875E-10"
+        ixz="0.000116051539380149"
+        iyy="0.0108591675634407"
+        iyz="-2.30309518757341E-10"
+        izz="0.00173369930030835" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="-0.03 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hand_bot/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hand_bot/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="dummy_link_joint" type="fixed">
+  <parent link="dummy_link" />
+  <child link="base_link" />
+  </joint>
+  <link
+    name="thumb_lower">
+    <inertial>
+      <origin
+        xyz="-0.0146717254719545 8.89402371266196E-05 0.034009"
+        rpy="0 0 0" />
+      <mass
+        value="0.0141913225410551" />
+      <inertia
+        ixx="1.73105534034488E-06"
+        ixy="1.06627125713534E-08"
+        ixz="6.85563856724106E-22"
+        iyy="3.48992902687173E-06"
+        iyz="6.18276166292801E-23"
+        izz="2.1183781527226E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hand_bot/meshes/thumb_lower.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hand_bot/meshes/thumb_lower.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="thumb_lower_joint"
+    type="continuous">
+    <origin
+      xyz="-0.0697904945163514 0 0.144205013943543"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="thumb_lower" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="thumb_tip">
+    <inertial>
+      <origin
+        xyz="-0.0108563056382985 0.00118581516066497 0.0154906157070203"
+        rpy="0 0 0" />
+      <mass
+        value="0.00619150344597553" />
+      <inertia
+        ixx="2.34028685837351E-07"
+        ixy="4.71131557974681E-08"
+        ixz="-1.79641579500449E-09"
+        iyy="6.60204648356565E-07"
+        iyz="1.96731292775481E-10"
+        izz="5.82123696956229E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hand_bot/meshes/thumb_tip.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hand_bot/meshes/thumb_tip.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="thumb_tip_joint"
+    type="continuous">
+    <origin
+      xyz="-0.0387855356827445 0.000235118544666083 0.018499"
+      rpy="0 0 0" />
+    <parent
+      link="thumb_lower" />
+    <child
+      link="thumb_tip" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="index_lower">
+    <inertial>
+      <origin
+        xyz="0.0239088703056435 2.59556670254013E-09 0.015510005969888"
+        rpy="0 0 0" />
+      <mass
+        value="0.0113540384293597" />
+      <inertia
+        ixx="4.43227782507445E-07"
+        ixy="3.60087547476363E-13"
+        ixz="1.28850285618581E-12"
+        iyy="3.4209336950663E-06"
+        iyz="2.74080827858553E-12"
+        izz="3.24606186087563E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hand_bot/meshes/index_lower.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hand_bot/meshes/index_lower.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="index_lower_joint"
+    type="continuous">
+    <origin
+      xyz="-0.0737440061993371 0 0.267773316384999"
+      rpy="0 -1.5707963267949 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="index_lower" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="index_middle">
+    <inertial>
+      <origin
+        xyz="0.0193931241612039 6.93889390390723E-18 -0.0909720143523135"
+        rpy="0 0 0" />
+      <mass
+        value="0.0099754284930005" />
+      <inertia
+        ixx="9.63331774115533E-07"
+        ixy="-4.54052082283278E-13"
+        ixz="1.65184323422484E-13"
+        iyy="1.77529238382157E-06"
+        iyz="-3.90739595474209E-23"
+        izz="1.07733730138E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hand_bot/meshes/index_middle.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hand_bot/meshes/index_middle.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="index_middle_joint"
+    type="continuous">
+    <origin
+      xyz="0.0476453307518057 0 0.106482"
+      rpy="0 0 0" />
+    <parent
+      link="index_lower" />
+    <child
+      link="index_middle" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="index_tip">
+    <inertial>
+      <origin
+        xyz="0.0109208761883658 2.65025172987987E-09 0.0154906154914554"
+        rpy="0 0 0" />
+      <mass
+        value="0.00619150336790514" />
+      <inertia
+        ixx="2.2888252475664E-07"
+        ixy="4.82972895855026E-13"
+        ixz="1.80715409289673E-09"
+        iyy="6.65350789864724E-07"
+        iyz="-5.2069947345574E-13"
+        izz="5.82123714231468E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hand_bot/meshes/index_tip.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hand_bot/meshes/index_tip.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="index_tip_joint"
+    type="continuous">
+    <origin
+      xyz="0.0387862483224079 0 -0.106482"
+      rpy="0 0 0" />
+    <parent
+      link="index_middle" />
+    <child
+      link="index_tip" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="middle_lower">
+    <inertial>
+      <origin
+        xyz="0.0239088703056435 2.61630045059191E-09 0.015510005969888"
+        rpy="0 0 0" />
+      <mass
+        value="0.0113540384293597" />
+      <inertia
+        ixx="4.43227782507465E-07"
+        ixy="3.57505283708545E-13"
+        ixz="1.28850285366496E-12"
+        iyy="3.42093369506633E-06"
+        iyz="2.74080828144101E-12"
+        izz="3.24606186087563E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hand_bot/meshes/middle_lower.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hand_bot/meshes/middle_lower.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="middle_lower_joint"
+    type="continuous">
+    <origin
+      xyz="-0.0382500061993371 0 0.267773316384999"
+      rpy="0 -1.5707963267949 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="middle_lower" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="middle_middle">
+    <inertial>
+      <origin
+        xyz="0.0193931241612039 4.13179872260638E-11 0.0155099856476866"
+        rpy="0 0 0" />
+      <mass
+        value="0.00997542849300048" />
+      <inertia
+        ixx="9.63331774115532E-07"
+        ixy="-4.54052082609228E-13"
+        ixz="1.65184323690672E-13"
+        iyy="1.77529238382157E-06"
+        iyz="-6.5535389975188E-24"
+        izz="1.07733730138E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hand_bot/meshes/middle_middle.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hand_bot/meshes/middle_middle.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="middle_middle_joint"
+    type="continuous">
+    <origin
+      xyz="0.0476453307518057 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="middle_lower" />
+    <child
+      link="middle_middle" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="middle_tip">
+    <inertial>
+      <origin
+        xyz="0.0109208761883657 2.69156971363649E-09 0.0154906154914554"
+        rpy="0 0 0" />
+      <mass
+        value="0.00619150336790513" />
+      <inertia
+        ixx="2.2888252475664E-07"
+        ixy="4.82972895735831E-13"
+        ixz="1.80715409289735E-09"
+        iyy="6.65350789864723E-07"
+        iyz="-5.20699473353211E-13"
+        izz="5.82123714231467E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hand_bot/meshes/middle_tip.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hand_bot/meshes/middle_tip.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="middle_tip_joint"
+    type="continuous">
+    <origin
+      xyz="0.038786248322408 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="middle_middle" />
+    <child
+      link="middle_tip" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="ring_lower">
+    <inertial>
+      <origin
+        xyz="0.0239088703056435 2.59265503163575E-09 0.0155100059698881"
+        rpy="0 0 0" />
+      <mass
+        value="0.0113540384293597" />
+      <inertia
+        ixx="4.43227782507485E-07"
+        ixy="3.60450178164727E-13"
+        ixz="1.28850285652171E-12"
+        iyy="3.42093369506635E-06"
+        iyz="2.74080828173263E-12"
+        izz="3.24606186087564E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hand_bot/meshes/ring_lower.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hand_bot/meshes/ring_lower.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="ring_lower_joint"
+    type="continuous">
+    <origin
+      xyz="-0.00275600619933707 0 0.267773316384999"
+      rpy="0 -1.5707963267949 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="ring_lower" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="ring_middle">
+    <inertial>
+      <origin
+        xyz="0.019393124161204 -5.80234471581065E-12 0.0155099856476866"
+        rpy="0 0 0" />
+      <mass
+        value="0.00997542849300049" />
+      <inertia
+        ixx="9.63331774115532E-07"
+        ixy="-4.540520828448E-13"
+        ixz="1.65184323273074E-13"
+        iyy="1.77529238382157E-06"
+        iyz="1.02337713131639E-22"
+        izz="1.07733730138E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hand_bot/meshes/ring_middle.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hand_bot/meshes/ring_middle.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="ring_middle_joint"
+    type="continuous">
+    <origin
+      xyz="0.0476453307518057 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="ring_lower" />
+    <child
+      link="ring_middle" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="ring_tip">
+    <inertial>
+      <origin
+        xyz="0.0109208761883658 2.6444493955724E-09 0.0154906154914554"
+        rpy="0 0 0" />
+      <mass
+        value="0.00619150336790517" />
+      <inertia
+        ixx="2.28882524756641E-07"
+        ixy="4.82972896413741E-13"
+        ixz="1.80715409289713E-09"
+        iyy="6.65350789864727E-07"
+        iyz="-5.20699473423045E-13"
+        izz="5.82123714231471E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hand_bot/meshes/ring_tip.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hand_bot/meshes/ring_tip.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="ring_tip_joint"
+    type="continuous">
+    <origin
+      xyz="0.0387862483224079 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="ring_middle" />
+    <child
+      link="ring_tip" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="little_lower">
+    <inertial>
+      <origin
+        xyz="0.0239088683918271 1.99144321866296E-09 0.0155100055183267"
+        rpy="0 0 0" />
+      <mass
+        value="0.0113540369936257" />
+      <inertia
+        ixx="4.43227714055476E-07"
+        ixy="5.07497838099468E-13"
+        ixz="1.3999697583594E-12"
+        iyy="3.42093314705532E-06"
+        iyz="2.78183403666697E-12"
+        izz="3.2460613149603E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hand_bot/meshes/little_lower.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hand_bot/meshes/little_lower.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="little_lower_joint"
+    type="continuous">
+    <origin
+      xyz="0.0327379938006629 0 0.267773316384999"
+      rpy="0 -1.5707963267949 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="little_lower" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="little_middle">
+    <inertial>
+      <origin
+        xyz="0.0193931241612039 4.71054306672158E-11 0.0155099856476866"
+        rpy="0 0 0" />
+      <mass
+        value="0.0099754284930005" />
+      <inertia
+        ixx="9.63331774115533E-07"
+        ixy="-4.54052082563687E-13"
+        ixz="1.65184323153488E-13"
+        iyy="1.77529238382157E-06"
+        iyz="2.41833314434403E-23"
+        izz="1.07733730138E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hand_bot/meshes/little_middle.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hand_bot/meshes/little_middle.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="little_middle_joint"
+    type="continuous">
+    <origin
+      xyz="0.0476453307518057 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="little_lower" />
+    <child
+      link="little_middle" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="little_tip">
+    <inertial>
+      <origin
+        xyz="0.0109208761883658 2.65025171947153E-09 0.0154906154914554"
+        rpy="0 0 0" />
+      <mass
+        value="0.00619150336790515" />
+      <inertia
+        ixx="2.28882524756641E-07"
+        ixy="4.82972896796076E-13"
+        ixz="1.80715409289637E-09"
+        iyy="6.65350789864726E-07"
+        iyz="-5.20699473638216E-13"
+        izz="5.82123714231469E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hand_bot/meshes/little_tip.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hand_bot/meshes/little_tip.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="little_tip_joint"
+    type="continuous">
+    <origin
+      xyz="0.0387862483224079 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="little_middle" />
+    <child
+      link="little_tip" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  
+   <transmission name="index_tip_trans">
+  	<type>transmission_interface/SimpleTransmission</type>
+  	<joint name="index_tip_joint">
+    		<hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+  	</joint>
+  	<actuator name="index_tip_joint_motor">
+    		<mechanicalReduction>50</mechanicalReduction>
+    		<hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+  	</actuator>
+   </transmission>
+  
+  
+   <transmission name="index_middle_trans">
+  	<type>transmission_interface/SimpleTransmission</type>
+  	<joint name="index_middle_joint">
+    		<hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+  	</joint>
+  	<actuator name="index_middle_joint_motor">
+    		<mechanicalReduction>50</mechanicalReduction>
+    		<hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+  	</actuator>
+   </transmission> 
+    
+    
+    
+   <transmission name="index_lower_trans">
+  	<type>transmission_interface/SimpleTransmission</type>
+  	<joint name="index_lower_joint">
+    		<hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+  	</joint>
+  	<actuator name="index_lower_joint_motor">
+    		<mechanicalReduction>50</mechanicalReduction>
+    		<hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+  	</actuator>
+   </transmission>
+   
+   
+   <transmission name="middle_tip_trans">
+  	<type>transmission_interface/SimpleTransmission</type>
+  	<joint name="middle_tip_joint">
+    		<hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+  	</joint>
+  	<actuator name="middle_tip_joint_motor">
+    		<mechanicalReduction>50</mechanicalReduction>
+    		<hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+  	</actuator>
+   </transmission>
+   
+   
+   <transmission name="middle_middle_trans">
+  	<type>transmission_interface/SimpleTransmission</type>
+  	<joint name="middle_middle_joint">
+    		<hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+  	</joint>
+  	<actuator name="middle_middle_joint_motor">
+    		<mechanicalReduction>50</mechanicalReduction>
+    		<hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+  	</actuator>
+   </transmission>
+   
+   
+   <transmission name="middle_lower_trans">
+  	<type>transmission_interface/SimpleTransmission</type>
+  	<joint name="middle_lower_joint">
+    		<hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+  	</joint>
+  	<actuator name="middle_lower_joint_motor">
+    		<mechanicalReduction>50</mechanicalReduction>
+    		<hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+  	</actuator>
+   </transmission>
+   
+   
+   <transmission name="ring_tip_trans">
+  	<type>transmission_interface/SimpleTransmission</type>
+  	<joint name="ring_tip_joint">
+    		<hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+  	</joint>
+  	<actuator name="ring_tip_joint_motor">
+    		<mechanicalReduction>50</mechanicalReduction>
+    		<hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+  	</actuator>
+   </transmission>
+   
+   
+   <transmission name="ring_middle_trans">
+  	<type>transmission_interface/SimpleTransmission</type>
+  	<joint name="ring_middle_joint">
+    		<hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+  	</joint>
+  	<actuator name="ring_middle_joint_motor">
+    		<mechanicalReduction>50</mechanicalReduction>
+    		<hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+  	</actuator>
+   </transmission>
+   
+   
+   <transmission name="ring_lower_trans">
+  	<type>transmission_interface/SimpleTransmission</type>
+  	<joint name="ring_lower_joint">
+    		<hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+  	</joint>
+  	<actuator name="ring_lower_joint_motor">
+    		<mechanicalReduction>50</mechanicalReduction>
+    		<hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+  	</actuator>
+   </transmission>
+   
+   
+   <transmission name="little_tip_trans">
+  	<type>transmission_interface/SimpleTransmission</type>
+  	<joint name="little_tip_joint">
+    		<hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+  	</joint>
+  	<actuator name="little_tip_joint_motor">
+    		<mechanicalReduction>50</mechanicalReduction>
+    		<hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+  	</actuator>
+   </transmission>
+   
+   
+   <transmission name="little_middle_trans">
+  	<type>transmission_interface/SimpleTransmission</type>
+  	<joint name="little_middle_joint">
+    		<hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+  	</joint>
+  	<actuator name="little_middle_joint_motor">
+    		<mechanicalReduction>50</mechanicalReduction>
+    		<hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+  	</actuator>
+   </transmission>
+   
+   <transmission name="little_lower_trans">
+  	<type>transmission_interface/SimpleTransmission</type>
+  	<joint name="little_lower_joint">
+    		<hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+  	</joint>
+  	<actuator name="little_lower_joint_motor">
+    		<mechanicalReduction>50</mechanicalReduction>
+    		<hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+  	</actuator>
+   </transmission>
+   
+   
+   <transmission name="thumb_lower_trans">
+  	<type>transmission_interface/SimpleTransmission</type>
+  	<joint name="thumb_lower_joint">
+    		<hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+  	</joint>
+  	<actuator name="thumb_lower_joint_motor">
+    		<mechanicalReduction>50</mechanicalReduction>
+    		<hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+  	</actuator>
+   </transmission>
+   
+   
+   <transmission name="thumb_tip_trans">
+  	<type>transmission_interface/SimpleTransmission</type>
+  	<joint name="thumb_tip_joint">
+    		<hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+  	</joint>
+  	<actuator name="thumb_tip_joint_motor">
+    		<mechanicalReduction>50</mechanicalReduction>
+    		<hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+  	</actuator>
+    </transmission>
+</robot>
